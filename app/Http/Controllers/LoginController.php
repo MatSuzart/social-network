@@ -20,15 +20,7 @@ class LoginController extends Controller
                 
      }
      
-     public function Lform(){
-
-        return view('login_entrar');
-     }
-     public function Cform(){
-        return view('login_cadastrar');
-
-     }
-
+     
     public function cadastrar(){
 
         $nome = Request::input('nome');

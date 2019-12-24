@@ -3,19 +3,18 @@
         <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Rede Social</title>
-	    <link rel="stylesheet" href="css/app.css">
+	    <title></title>
     </head>
     <body>
 		<nav class="navbar navbar-inverse">
 			<div class="container">
 				<div id="navbar">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="/">Rede Social</a></li>
+						<li><a href="">Rede Social</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/entrar">Login</a></li>
-						<li><a href="/cadastrar">Cadastrar</a></li>
+						<li><a href="login/entrar">Login</a></li>
+						<li><a href="login/cadastrar">Cadastrar</a></li>
 					</ul>
 				</div>
 			</div>
@@ -23,8 +22,10 @@
 		<div class="container">
 	        <h1>Cadastrar</h1>
 
-	        <form action="/login/cadastrar" method="POST">
-                {{ csrf_field() }}
+	        <div class="alert alert-danger"></div>
+
+	        <form method="POST">
+
 	        	<div class="form-group">
 	        		<label for="nome">Nome:</label>
 	        		<input type="text" class="form-control" name="nome" id="nome" />

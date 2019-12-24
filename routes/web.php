@@ -12,11 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
-Route::get('/entrar', 'LoginController@Lform');
-Route::post('/login/entrar', 'LoginController@entrar');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/entrar', function(){
+    return view('login_entrar');
+})->name('entrar');
 
-Route::get('/cadastrar', 'LoginController@Cform');
-Route::post('/login/cadastrar', 'LoginController@cadastrar');
+Route::get('/cadastrar', function(){
+    return view('login_cadastrar');
+})->name('cadastrar');
+
