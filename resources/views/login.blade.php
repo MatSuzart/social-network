@@ -3,6 +3,7 @@
         <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	    <title>Rede Social</title>
     </head>
     <body>
@@ -10,7 +11,7 @@
 			<div class="container">
 				<div id="navbar">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="">Rede Social</a></li>
+						<li><a href="{{route('login')}}">Rede Social</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="{{route('entrar')}}">Login</a></li>

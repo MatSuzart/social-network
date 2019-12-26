@@ -7,8 +7,13 @@ use Auth;
 
 class LoginController extends Controller
 {
-    
-    public function entrar(){
+    public function __construct(){
+
+        $this->middleware('authorizer');
+
+    }
+
+    public function login(){
         $cred = Request::only('email', 'senha');
         if(Auth::attempt($cred)){
             return redirect('/home');
@@ -16,7 +21,7 @@ class LoginController extends Controller
             return 'usuario não existe';
         }
 
-        return view('login_entrar');
+        return view('home');
                 
      }
      
