@@ -1,32 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Request;
 use Auth;
+use App\Usuario;
 
 class LoginController extends Controller
 {
-    public function __construct(){
-
-        $this->middleware('authorizer');
-
-    }
-
+    
     public function login(){
-        $cred = Request::only('email', 'senha');
-        if(Auth::attempt($cred)){
-            return redirect('/home');
-        }else {
-            return 'usuario não existe';
-        }
-
+        $u = Request::only('email', 'senha');
+        $u = DB::table('usuarios')->where('email','senha')->first();
         return view('home');
                 
      }
      
      
-    public function cadastrar(){
+    public function create(){
 
         $nome = Request::input('nome');
         $email = Request::input('email');
@@ -35,6 +26,6 @@ class LoginController extends Controller
         
         DB::insert('insert into usuarios (nome, email, senha, sexo) values(?, ?, ?, ?)',
         array($nome, $email, $senha, $sexo));
-
+        return redirect('entrar');
     }
 }

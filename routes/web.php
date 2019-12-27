@@ -15,12 +15,18 @@ Route::get('/', function () {
     return view('login');
 })->name('login');
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/entrar', function(){
     return view('login_entrar');
 })->name('entrar');
+
+Route::post('/login','LoginController@login');
 
 Route::get('/cadastrar', function(){
     return view('login_cadastrar');
 })->name('cadastrar');
 
+
+Route::post('/create','LoginController@create');
+
+
+Route::get('/home', 'HomeController@index')->name('home');

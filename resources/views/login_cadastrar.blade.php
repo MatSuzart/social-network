@@ -23,8 +23,8 @@
 		<div class="container">
 	        <h1>Cadastrar</h1>
 
-	        <form method="POST">
-
+	        <form action="/create" method="POST">
+			{{ csrf_field() }}
 	        	<div class="form-group">
 	        		<label for="nome">Nome:</label>
 	        		<input type="text" class="form-control" name="nome" id="nome" />
