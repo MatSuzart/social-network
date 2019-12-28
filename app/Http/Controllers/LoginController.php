@@ -11,7 +11,9 @@ class LoginController extends Controller
     
     public function login(){
         $u = Request::only('email', 'senha');
-        $u = DB::table('usuarios')->where('email','senha')->first();
+
+        $u = new Usuario();
+        Usuario::where('email', $u->email,'senha', $u->senha)->get();
         return view('home');
                 
      }
