@@ -5,7 +5,8 @@
 	<div class="col-sm-8">
 
 		<div class="post_area">
-			<form method="POST" enctype="multipart/form-data">
+			<form method="POST" enctype="multipart/form-data" action="createPost">
+			{{ csrf_field() }}
 				<h4>O que você está pensando?</h4>
 				<textarea name="post" class="form-control"></textarea><br/>
 				<input type="file" name="foto" /><br/>
@@ -13,7 +14,6 @@
 			</form>
 		</div>
 		<div class="feed">
-            .....
     	</div>
 	</div>
 	<div class="col-sm-4">

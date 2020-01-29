@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Usuario;
+use App\Post;
 class HomeController extends Controller
 {
     /**
@@ -14,13 +16,15 @@ class HomeController extends Controller
 
     public function __construct(){
 
-        $this->middleware('authorizer');
+       $this->middleware('authorizer');
 
     }
 
     public function index()
     { 
-       return view('home');
+        $post = Post::All();
+
+        return view('home', compact('post'));
     }
 
     /**
@@ -87,5 +91,24 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function createPost($id){
+        $postsData = $request->all();
+
+        $u = Usuario::find($id);
+        if(isset($u)){
+
+            $post = new Post();
+            $post->usuario()->create($postsData);
+
+        }
+
+
+    }
+    public function myPost(){
+        //$post = Post::All();
+
+       // return view('home', compact('post'));
     }
 }

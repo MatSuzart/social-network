@@ -5,6 +5,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title>Rede Social</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+		<script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
     </head>
     <body>
 		<nav class="navbar navbar-inverse">

@@ -27,6 +27,5 @@ Route::get('/cadastrar', function(){
 
 
 Route::post('/create','LoginController@create');
-
-
+Route::post('/createPost', 'HomeController@createPost');
 Route::get('/home', 'HomeController@index')->name('home');
