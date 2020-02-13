@@ -17,13 +17,14 @@
     	</div>
 	</div>
 	<div class="col-sm-4">
+		@foreach($rel as $r)
 		<div class="widget">
 			<h4>Requisições de amizade</h4>
 			<div class="requisicaoitem">
-				<strong></strong>
+				<strong>{{$r->id}}</strong>
 			</div>
 		</div>
-
+		@endforeach                
 		<div class="widget">
 			<h4>Total de Amigos</h4>
 		</div>

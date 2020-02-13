@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Usuario;
 use App\Post;
+use App\Relacionamento;
 class HomeController extends Controller
 {
     /**
@@ -22,9 +23,8 @@ class HomeController extends Controller
 
     public function index()
     { 
-        $post = Post::All();
-
-        return view('home', compact('post'));
+        $rel = Relacionamento::all();
+        return view('home', compact('rel'));
     }
 
     /**
