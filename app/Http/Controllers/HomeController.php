@@ -23,7 +23,7 @@ class HomeController extends Controller
 
     public function index()
     { 
-        $rel = Relacionamento::all();
+        $rel= Relacionamento::all();
         return view('home', compact('rel'));
     }
 
@@ -107,8 +107,8 @@ class HomeController extends Controller
 
     }
     public function myPost(){
-        //$post = Post::All();
+        $post = Post::All();
 
-       // return view('home', compact('post'));
+       return view('home', compact('post'));
     }
 }

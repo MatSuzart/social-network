@@ -24,7 +24,7 @@
 				<strong>{{$r->id}}</strong>
 			</div>
 		</div>
-		@endforeach                
+		@endforeach        
 		<div class="widget">
 			<h4>Total de Amigos</h4>
 		</div>
